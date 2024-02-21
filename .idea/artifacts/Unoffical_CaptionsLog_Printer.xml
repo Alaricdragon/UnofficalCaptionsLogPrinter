@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Unoffical CaptionsLog Printer">
+    <output-path>$PROJECT_DIR$/jars</output-path>
+    <root id="archive" name="Unoffical CaptionsLog Printer.jar">
+      <element id="module-output" name="Unoffical CaptionsLog Printer" />
+    </root>
+  </artifact>
+</component>
