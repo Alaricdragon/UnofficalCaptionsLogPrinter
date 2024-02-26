@@ -74,20 +74,20 @@ public class UCLP_Memory {
         String cords = "";
         if(entityToken.isInHyperspace()) {
             try {
-                cords += getSplitString(HPDescription,new String[]{""+entityToken.getLocationInHyperspace().getX(),""+entityToken.getLocationInHyperspace().getY()});
+                cords += getSplitString(HPDescription,new String[]{""+(int)entityToken.getLocationInHyperspace().getX(),""+(int)entityToken.getLocationInHyperspace().getY()});
             }catch (Exception e){
                 cords += getSplitString(HPDescription,new String[]{HPDescription2,""});
             }
         }else{
             try {
                 //starXY = new float[]{entityToken.getStarSystem().getLocation().getX(), entityToken.getStarSystem().getLocation().getY()};
-                cords += getSplitString(HPDescription,new String[]{""+entityToken.getLocationInHyperspace().getX(),""+entityToken.getLocationInHyperspace().getY()});
+                cords += getSplitString(HPDescription,new String[]{""+(int)entityToken.getLocationInHyperspace().getX(),""+(int)entityToken.getLocationInHyperspace().getY()});
             } catch (Exception e) {
                 cords += getSplitString(HPDescription,new String[]{HPDescription2,""});
             }
             try {
                 //worldXY = new float[]{entityToken.getLocation().getX(), entityToken.getLocation().getY()};
-                cords += getSplitString(ISDescription,new String[]{""+entityToken.getLocation().getX(),""+entityToken.getLocation().getY()});
+                cords += getSplitString(ISDescription,new String[]{""+(int)entityToken.getLocation().getX(),""+(int)entityToken.getLocation().getY()});
                 //printLine(entityToken.getLocation().getX()+","+entityToken.getLocation().getY());
             } catch (Exception e) {
                 cords += getSplitString(ISDescription,new String[]{ISDescription2,""});
