@@ -2,9 +2,15 @@
 	"id":"Unoffical Captions Log Printer", # internal id
 	"name":"Unoffical Captions Log Printer", # displayed to the player
 	"author":"Alricdragon",
-	"version":"0.0",
-	"description":"a tiny mod made to print the contents of all the 'captions logs' into a text document.",
+	"version":"1.0",
+	"description":"a tiny mod made to print the contents of all the 'captions logs' into a the starsector.log. activates both on game save, and game load",
 	"gameVersion":"0.97a-RC10",
+	"dependencies": [
+		{
+			"id": "CaptainsLog",
+			"name": "Captain's Log",
+		},
+	],
 	"jars":["jars/Unoffical CaptionsLog Printer.jar"],
 	"modPlugin":"UnofficalCaptionsLogPrinter.data.scripts.UnofficalCaptionsLogPrinter_startup",
 }

@@ -23,6 +23,13 @@ public class UnofficalCaptionsLogPrinter_startup extends BaseModPlugin {
         super.onGameLoad(newGame);
         attemptPrint();
     }
+
+    @Override
+    public void beforeGameSave() {
+        super.beforeGameSave();
+        attemptPrint();
+    }
+
     public void testing(){
         /*ok, so i have started to look though the infermation in the captions log classes, and i have a issue.
          * for one thing, the data related to getting a ressage is mostly private. so i might be foreced to make my own version just for that nonesense.
@@ -49,27 +56,6 @@ public class UnofficalCaptionsLogPrinter_startup extends BaseModPlugin {
 
     }
     public void attemptPrint(){
-        //Constants.CUSTOM_MESSAGE_INTEL_TAG
-        IntelManagerAPI manager = Global.getSector().getIntelManager();
-        List<IntelInfoPlugin> intell = manager.getIntel(CustomMessageIntel.class);
-        UCLP_ToolTipMemory info = new UCLP_ToolTipMemory();//new UCLP_ToolTipMemory();
-        if (intell.size() == 0) return;
-        //new TooltipMakerAPI.TooltipLocation();
-        //title
-        intell.get(0).createIntelInfo(info,IntelInfoPlugin.ListInfoMode.IN_DESC);
-        //main body text.
-        intell.get(0).createSmallDescription(info,0,0);
-        //location
-        /*SectorMapAPI map = ????;
-        intell.get(0).getMapLocation();*/
-        //time
-        long time = intell.get(0).getPlayerVisibleTimestamp();
-        String textTemp = info.toString();
-        final Logger LOG = Global.getLogger(this.getClass());
-        LOG.info("Attempting to log a captions log thing: ");
-        LOG.info("Time of PlayerVisable: "+time);
-        for (String a : info.getItems()){
-            LOG.info(a);
-        }
+        UCLP_Printer.printall();
     }
 }
